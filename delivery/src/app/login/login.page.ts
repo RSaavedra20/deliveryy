@@ -27,10 +27,10 @@ export class LoginPage implements OnInit {
         user: this.user // Al estado se asignamos un objeto con clave y valor
       }
     };
-    this.router.navigate(['/home'],navigationExtras); // navegamos hacia el Home y enviamos información adicional
+    this.router.navigate(['/combo2'],navigationExtras); // navegamos hacia el Home y enviamos información adicional
   }
   irPagina(){
-    this.router.navigate(['/home']);
+    this.router.navigate(['/combo2']);
   }
 
 }

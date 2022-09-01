@@ -16,13 +16,14 @@ const routes: Routes = [
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
   {
-    path: 'combos',
-    loadChildren: () => import('./combos/combos.module').then( m => m.CombosPageModule)
-  },
-  {
     path: 'pagina-inicial',
     loadChildren: () => import('./pagina-inicial/pagina-inicial.module').then( m => m.PaginaInicialPageModule)
   },
+  {
+    path: 'combo2',
+    loadChildren: () => import('./combo2/combo2.module').then( m => m.Combo2PageModule)
+  },
+
 ];
 
 @NgModule({
