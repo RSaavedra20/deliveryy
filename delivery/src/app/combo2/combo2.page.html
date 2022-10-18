@@ -1,10 +1,10 @@
 
 <ion-content [fullscreen]="true">
   <ion-header>
-    <ion-toolbar>
-      <ion-button expand="" (click)="back()">«</ion-button>
+    <ion-toolbar>      
       <ion-title>Combos</ion-title>
     </ion-toolbar>
+    <ion-button class="animacion" expand="full" (click)="ingresar()">Ir a portada</ion-button>
     <ion-content>
       <ion-infinite-scroll>
         <ion-infinite-scroll-content
@@ -76,7 +76,6 @@
       </ion-item>
     </ion-list>
   </ion-header>
-  <ion-button class="animacion" expand="full" (click)="ingresar()">Ir a portada</ion-button>
 </ion-content>
 
 
