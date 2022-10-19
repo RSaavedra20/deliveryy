@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, NavigationExtras } from '@angular/router';
-
+import {
+  FormGroup,
+  FormControl,
+  Validators,
+  FormBuilder
+} from '@angular/forms' ;
+import { AlertController, NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -8,30 +13,44 @@ import { Router, NavigationExtras } from '@angular/router';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-  /**
-   * Se genera el modelo user con dos claves
-   * cada clave tiene su valor inicial
-   */
-  user={
-    usuario:"",
-    password:""
-  }
-  constructor(private router: Router) { } // Se debe instanciar
+
+  formularioLogin: FormGroup;
+
+  constructor(public fb: FormBuilder,
+    public alertController: AlertController,
+    public navCtrl: NavController) {
+
+    this.formularioLogin = this.fb.group({
+
+      'nombre': new FormControl("",Validators.required),
+      'password': new FormControl("",Validators.required)
+   })
+   
+   }
 
   ngOnInit() {
   }
-  ingresar(){
-    // Se declara e instancia un elemento de tipo NavigationExtras
-    let navigationExtras: NavigationExtras = {
-      state: {
-        user: this.user // Al estado se asignamos un objeto con clave y valor
-      }
-    };
-    this.router.navigate(['/combo2'],navigationExtras); // navegamos hacia el Home y enviamos información adicional
-  }
-  irPagina(){
-    this.router.navigate(['/combo2']);
+
+
+  async ingresar(){
+
+    var f = this.formularioLogin.value;
+
+    var usuario = JSON.parse(localStorage.getItem('usuario'));
+
+    if(usuario.nombre == f.nombre && usuario.password == f.password){
+      console.log('ingresado');
+      localStorage.setItem('ingresado','true');
+      this.navCtrl.navigateRoot('combo2');
+    }else{
+      const alert = await this.alertController.create({
+        header: 'datos incorrectos',
+        message: 'los datos son incorrectos',
+        buttons: ['aceptar']
+      });
+
+      await alert.present();
+    }
   }
 
 }
-

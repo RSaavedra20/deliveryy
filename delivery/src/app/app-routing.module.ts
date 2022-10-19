@@ -8,7 +8,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'pagina-inicial',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
   {
@@ -23,6 +23,11 @@ const routes: Routes = [
     path: 'combo2',
     loadChildren: () => import('./combo2/combo2.module').then( m => m.Combo2PageModule)
   },
+  {
+    path: 'registro',
+    loadChildren: () => import('./registro/registro.module').then( m => m.RegistroPageModule)
+  },
+
 
 ];
 
