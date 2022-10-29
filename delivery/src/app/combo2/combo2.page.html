@@ -1,81 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>combo2</ion-title>
+  </ion-toolbar>
+</ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header>
-    <ion-toolbar>      
-      <ion-title>Combos</ion-title>
-    </ion-toolbar>
-    <ion-button class="animacion" expand="full" (click)="ingresar()">Ir a portada</ion-button>
-    <ion-content>
-      <ion-infinite-scroll>
-        <ion-infinite-scroll-content
-          loadingSpinner="bubbles"
-          loadingText="Loading more data…">
-        </ion-infinite-scroll-content>
-      </ion-infinite-scroll>
-    </ion-content>
-    <ion-list>
-      <ion-item (click)="tuPromo()">
-        <ion-avatar slot="start">
-          <img src="assets/icon/tacos.jpg" />
-        </ion-avatar>
-        <ion-label>
-          <h2>Promo 1</h2>
-          <h3>tacos</h3>
-          <p>Oferta 2x1 "$6000"</p>
-        </ion-label>
-      </ion-item>
-      <ion-item (click)="tuPromo()">
-        <ion-avatar slot="start">
-          <img src="assets/icon/fajita.jpg" />
-        </ion-avatar>
-        <ion-label>
-          <h2>Promo 2</h2>
-          <h3>fajitas</h3>
-          <p>Oferta 2x1 "$6000"</p>
-        </ion-label>
-      </ion-item>
-      <ion-item (click)="tuPromo()">
-        <ion-avatar slot="start">
-          <img src="assets/icon/churrasco.jpeg" />
-        </ion-avatar>
-        <ion-label>
-          <h2>Promo 3</h2>
-          <h3>Churrasco italiano</h3>
-          <p>Oferta 2x1 "$6000"</p>
-        </ion-label>
-      </ion-item>
-      <ion-item (click)="tuPromo()">
-        <ion-avatar slot="start">
-          <img src="assets/icon/pizza.jpg" />
-        </ion-avatar>
-        <ion-label>
-          <h2>Promo 4</h2>
-          <h3>pizza individual</h3>
-          <p>Oferta 2x1 "$6000"</p>
-        </ion-label>
-      </ion-item>
-      <ion-item (click)="tuPromo()">
-        <ion-avatar slot="start">
-          <img src="assets/icon/papitas.jpg" />
-        </ion-avatar>
-        <ion-label>
-          <h2>Promo 5</h2>
-          <h3>papas fritas</h3>
-          <p>"$3000"</p>
-        </ion-label>
-      </ion-item>
-      <ion-item (click)="tuPromo()">
-        <ion-avatar slot="start">
-          <img src="assets/icon/completo.jpeg" />
-        </ion-avatar>
-        <ion-label>
-          <h2>Promo 6</h2>
-          <h3>Completo italiano</h3>
-          <p>Oferta 2x1 "$5000"</p>
-        </ion-label>
-      </ion-item>
-    </ion-list>
-  </ion-header>
+<ion-content>
+
+<ion-list>
+  <ion-item *ngFor="let p of productos" [routerLink]="['/combo2', p.id ]">
+
+    <ion-avatar slot="start" >
+      <ion-img src="{{p.url}}" ></ion-img>
+    </ion-avatar>
+    <ion-label>{{p.titulo}}</ion-label>
+  </ion-item>
+</ion-list>
 </ion-content>
 
 
