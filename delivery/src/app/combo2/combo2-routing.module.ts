@@ -7,7 +7,12 @@ const routes: Routes = [
   {
     path: '',
     component: Combo2Page
+  },
+  {
+    path: ':productoID',
+    loadChildren: () => import('./descripcion-combo2/descripcion-combo2.module').then( m => m.DescripcionCombo2PageModule)
   }
+
 ];
 
 @NgModule({
