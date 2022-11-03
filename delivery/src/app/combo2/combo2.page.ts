@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Navigation } from 'selenium-webdriver';
 import{Combo2Service} from  './combo2.service'
 
 @Component({
@@ -9,13 +11,17 @@ import{Combo2Service} from  './combo2.service'
 export class Combo2Page implements OnInit {
 
   private productos = []
-  constructor(private Servicio: Combo2Service) { }
+  constructor(private Servicio: Combo2Service,private router:Router) { }
 
   ngOnInit() {
     this.productos = this.Servicio.getProductos()
 
   }
-
+  logout() {
+    console.log("oK")
+    localStorage.setItem('ingresado','false');
+    this.router.navigate(['/login'])
+   }
 }
 
 

@@ -2,8 +2,11 @@
   <ion-toolbar>
     <ion-title>descripcion-combo2</ion-title>
   </ion-toolbar>
+
 </ion-header>
 
-<ion-content>
+<ion-content *ngIf = 'producto'>
+  {{producto.titulo}}
+  {{producto.id}}
 
 </ion-content>

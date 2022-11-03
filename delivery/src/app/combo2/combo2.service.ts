@@ -50,11 +50,10 @@ export class Combo2Service {
 
 
   //buscar por id
-  getProductosById(productoID:string){
-    return{
-      ...this.productos.find(p =>{
-        p.id = productoID
-      })
-    }
+  getProductosById(productoID:string){ 
+    return this.productos.filter(p =>{
+      return p.id == productoID
+    })[0]
+    
   }
 }
