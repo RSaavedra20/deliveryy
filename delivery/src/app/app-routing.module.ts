@@ -31,9 +31,14 @@ const routes: Routes = [
     path: 'registro',
     loadChildren: () => import('./registro/registro.module').then( m => m.RegistroPageModule),
     canActivate: [NoIngresadoGuard]
-  },  {
+  },
+  {
     path: 'bebidas',
     loadChildren: () => import('./bebidas/bebidas.module').then( m => m.BebidasPageModule)
+  },
+  {
+    path: '**',
+    loadChildren: () => import('./not-found/not-found.module').then( m => m.NotFoundPageModule)
   },
 
 
