@@ -1,12 +1,15 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>descripcion-combo2</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>descripcion</ion-title>
   </ion-toolbar>
 
 </ion-header>
 
 <ion-content *ngIf = 'producto'>
-  {{producto.titulo}}
-  {{producto.id}}
+  {{producto.titulo}} <br>
+  {{producto.descripcion}}
 
 </ion-content>
