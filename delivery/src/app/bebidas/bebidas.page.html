@@ -9,6 +9,9 @@
 <ion-content [fullscreen]="true">
   <ion-list>
     <ion-item *ngFor="let item of getdata">
+      <ion-avatar slot="start" >
+        <ion-img src="{{item.image}}" ></ion-img>
+      </ion-avatar>
       {{item.price}}
       {{item.name}}
     </ion-item>
