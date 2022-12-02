@@ -20,10 +20,10 @@ describe('ng5-create-routes App', () => {
 
   });
 
-  //it('Mostrando Boton de Login', () => {
-    //page.navigateTo();
-    //expect(page.getAboutButton().getText()).toEqual('ingresar');
-  //});
+  it('Mostrando Boton de Login', () => {
+    page.navigateTo();
+    expect(element(by.id("Ingresar")).click());
+  });
 
   //it('Mostrando Route de Login', () => {
     //page.navigateTo();
